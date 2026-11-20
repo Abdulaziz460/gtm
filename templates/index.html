@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f3ed">
+    <meta name="description" content="Thoughtful real estate guidance for buying and selling in Seattle. Meet Mira Bennett and explore a curated collection of homes.">
+    <title>Mira Bennett | Seattle Real Estate, Thoughtfully</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Mira Bennett Real Estate, home">
+        <span class="brand-mark" aria-hidden="true">MB</span>
+        <span class="brand-copy"><strong>MIRA BENNETT</strong><small>REAL ESTATE</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#homes">Homes</a>
+        <a href="#approach">My approach</a>
+        <a href="#about">About Mira</a>
+        <a href="#journal">Kind words</a>
+      </nav>
+      <a class="header-cta" href="#contact">Let&apos;s talk <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero-section" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Seattle homes, considered</p>
+          <h1 id="hero-title">Find a place<br>to <em>feel at home.</em></h1>
+          <p class="hero-description">Good moves start with good listening. I bring local insight, a steady hand, and a little more heart to every step.</p>
+          <a class="text-link" href="#homes">Explore the homes <span aria-hidden="true">↓</span></a>
+          <div class="hero-note"><span class="note-dot" aria-hidden="true"></span><span>Independent guidance. Always in your corner.</span></div>
+        </div>
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="{{ url_for('static', filename='images/hero-home.png') }}" alt="Warm, modern Pacific Northwest home surrounded by mature trees" fetchpriority="high">
+          <div class="image-caption"><span>01 / 04</span><span>Pacific Northwest living</span></div>
+          <div class="hero-image-stamp" aria-hidden="true"><span>LOCAL<br>BY NATURE</span><span class="stamp-star">✳</span></div>
+        </div>
+        <div class="hero-index" aria-hidden="true">47°36&apos; N &nbsp; 122°20&apos; W</div>
+      </section>
+
+      <section class="search-section" aria-labelledby="search-heading">
+        <div class="search-intro">
+          <p class="eyebrow">A good place to begin</p>
+          <h2 id="search-heading">What feels like home?</h2>
+        </div>
+        <form class="search-form" id="property-search">
+          <label class="search-field location-field" for="location-search">
+            <span>Neighborhood</span>
+            <input id="location-search" name="location" type="search" placeholder="Try Ballard or West Seattle" autocomplete="off">
+          </label>
+          <label class="search-field" for="home-type">
+            <span>I&apos;m looking to</span>
+            <select id="home-type" name="type">
+              <option value="all">Buy or rent</option>
+              <option value="sale">Buy a home</option>
+              <option value="rent">Rent a home</option>
+            </select>
+          </label>
+          <label class="search-field budget-field" for="max-budget">
+            <span>Maximum price</span>
+            <select id="max-budget" name="budget">
+              <option value="any">Any price</option>
+              <option value="800000">$800,000</option>
+              <option value="1200000">$1,200,000</option>
+              <option value="1600000">$1,600,000</option>
+            </select>
+          </label>
+          <button class="search-button" type="submit"><span>Find a home</span><span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <section class="homes-section section-pad" id="homes" aria-labelledby="homes-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A considered collection</p>
+            <h2 id="homes-heading">Homes with <em>room to be you.</em></h2>
+          </div>
+          <a class="text-link desktop-only" href="#contact">Thinking of selling? <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="listing-toolbar">
+          <p id="results-count" aria-live="polite">Showing <span>3</span> homes</p>
+          <button class="reset-search" id="reset-search" type="button">Clear filters <span aria-hidden="true">↺</span></button>
+        </div>
+        <div class="listings-grid" id="listings-grid">
+          <article class="listing-card" data-listing-id="cedar-house" data-type="sale" data-price="1285000" data-neighborhood="ballard" data-title="The Cedar House" data-address="Ballard · Seattle, WA" data-beds="4 beds" data-baths="3 baths" data-area="2,680 sq ft" data-description="A sun-washed craftsman with a thoughtful new kitchen, a garden made for slow weekends, and just the right amount of room to grow.">
+            <div class="listing-image-wrap">
+              <img src="{{ url_for('static', filename='images/listing-01.png') }}" alt="Bright living room with oak floors and garden views" loading="lazy">
+              <span class="listing-tag">Just listed</span>
+              <button class="save-button" type="button" aria-label="Save The Cedar House" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button>
+            </div>
+            <div class="listing-info">
+              <div class="listing-topline"><span>Ballard, Seattle</span><span class="listing-price">$1,285,000</span></div>
+              <h3>The Cedar House</h3>
+              <p class="listing-facts">4 beds <span>·</span> 3 baths <span>·</span> 2,680 sq ft</p>
+              <button class="listing-details" type="button" data-open-listing>Explore this home <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="listing-card" data-listing-id="sound-side" data-type="sale" data-price="945000" data-neighborhood="west seattle" data-title="The Sound Side" data-address="West Seattle · Seattle, WA" data-beds="3 beds" data-baths="2 baths" data-area="2,040 sq ft" data-description="A quiet coastal-inspired home with a generous deck, soft morning light, and a garden that makes staying in feel like the plan.">
+            <div class="listing-image-wrap">
+              <img src="{{ url_for('static', filename='images/listing-02.png') }}" alt="Wood-sided home with a garden and welcoming front deck" loading="lazy">
+              <span class="listing-tag listing-tag-muted">Open Sunday</span>
+              <button class="save-button" type="button" aria-label="Save The Sound Side" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button>
+            </div>
+            <div class="listing-info">
+              <div class="listing-topline"><span>West Seattle</span><span class="listing-price">$945,000</span></div>
+              <h3>The Sound Side</h3>
+              <p class="listing-facts">3 beds <span>·</span> 2 baths <span>·</span> 2,040 sq ft</p>
+              <button class="listing-details" type="button" data-open-listing>Explore this home <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="listing-card" data-listing-id="maple-row" data-type="sale" data-price="1575000" data-neighborhood="madrona" data-title="Maple Row" data-address="Madrona · Seattle, WA" data-beds="3 beds" data-baths="2.5 baths" data-area="2,320 sq ft" data-description="Classic brick character meets considered modern updates in this leafy neighborhood home, a short walk from the lake and the local coffee shop.">
+            <div class="listing-image-wrap">
+              <img src="{{ url_for('static', filename='images/listing-03.png') }}" alt="Restored brick townhouse along a leafy Seattle street" loading="lazy">
+              <span class="listing-tag listing-tag-dark">New price</span>
+              <button class="save-button" type="button" aria-label="Save Maple Row" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></button>
+            </div>
+            <div class="listing-info">
+              <div class="listing-topline"><span>Madrona, Seattle</span><span class="listing-price">$1,575,000</span></div>
+              <h3>Maple Row</h3>
+              <p class="listing-facts">3 beds <span>·</span> 2.5 baths <span>·</span> 2,320 sq ft</p>
+              <button class="listing-details" type="button" data-open-listing>Explore this home <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-state-mark" aria-hidden="true">⌂</span>
+          <h3>No homes found just yet.</h3>
+          <p>Try another neighborhood or widen your price range. I&apos;d be happy to help you look.</p>
+          <a class="button-dark" href="#contact">Ask Mira to look for you <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="listing-disclaimer">Illustrative listings shown for this demo experience.</p>
+      </section>
+
+      <section class="approach-section" id="approach" aria-labelledby="approach-heading">
+        <div class="approach-image">
+          <img src="{{ url_for('static', filename='images/listing-02.png') }}" alt="A welcoming Seattle home framed by a green garden" loading="lazy">
+          <span class="approach-image-label">Good moves, made together.</span>
+        </div>
+        <div class="approach-copy">
+          <p class="eyebrow">More than a transaction</p>
+          <h2 id="approach-heading">A real person.<br><em>A clearer path.</em></h2>
+          <p>Buying or selling a home is personal. You deserve an advisor who understands the numbers, knows the neighborhood, and remembers what matters to you.</p>
+          <div class="approach-points">
+            <div><span>01</span><p><strong>Listen first</strong><small>Your needs set the direction.</small></p></div>
+            <div><span>02</span><p><strong>Make a smart plan</strong><small>Clear advice, no pressure.</small></p></div>
+            <div><span>03</span><p><strong>Stay close</strong><small>Steady support, all the way home.</small></p></div>
+          </div>
+          <a class="text-link" href="#about">Get to know Mira <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="neighborhood-section section-pad" aria-labelledby="neighborhood-heading">
+        <div class="neighborhood-heading">
+          <p class="eyebrow">A city of little worlds</p>
+          <h2 id="neighborhood-heading">Seattle, <em>street by street.</em></h2>
+          <p>From salt air to Sunday markets, every neighborhood has its own kind of magic. Let&apos;s find yours.</p>
+        </div>
+        <div class="neighborhood-list" aria-label="Featured neighborhoods">
+          <a href="#homes" data-neighborhood-link="ballard"><span>01</span><strong>Ballard</strong><span>Old soul, new energy</span><span class="neighborhood-arrow" aria-hidden="true">↗</span></a>
+          <a href="#homes" data-neighborhood-link="west seattle"><span>02</span><strong>West Seattle</strong><span>Room to breathe</span><span class="neighborhood-arrow" aria-hidden="true">↗</span></a>
+          <a href="#homes" data-neighborhood-link="madrona"><span>03</span><strong>Madrona</strong><span>Leafy and close-knit</span><span class="neighborhood-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-heading">
+        <div class="about-image-wrap">
+          <img src="{{ url_for('static', filename='images/agent-portrait.png') }}" alt="Mira Bennett, Seattle real estate advisor" loading="lazy">
+          <div class="about-image-tag">Your local<br>advocate</div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">A little about me</p>
+          <h2 id="about-heading">I believe home<br>is <em>how it feels.</em></h2>
+          <p class="about-lede">I&apos;m Mira — a Seattle neighbor, home enthusiast, and your thoughtful guide through one of life&apos;s biggest decisions.</p>
+          <p>For more than a decade, I&apos;ve helped people find their next chapter across the city I love. My work is built on honest advice, local relationships, and making sure you feel good about the decision long after the keys are yours.</p>
+          <div class="about-signature">Mira <span aria-hidden="true">✳</span></div>
+          <a class="text-link" href="#contact">Let&apos;s meet <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="testimonial-section section-pad" id="journal" aria-labelledby="testimonial-heading">
+        <div class="testimonial-topline"><p class="eyebrow">Kind words, real people</p><span aria-hidden="true">“</span></div>
+        <div class="testimonial-content">
+          <h2 id="testimonial-heading">We never felt like<br>we were figuring it out <em>alone.</em></h2>
+          <blockquote>“Mira really heard us. She found the home we didn&apos;t know how to describe yet — and made every step feel manageable.”</blockquote>
+          <p class="quote-credit"><strong>Jules &amp; Daniel</strong><span>First-time buyers · Ballard</span></p>
+        </div>
+        <div class="testimonial-footer"><span>01 / 03</span><span class="testimonial-line"></span><span>Notes from the other side of the move</span></div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="contact-copy">
+          <p class="eyebrow">The first step is a hello</p>
+          <h2 id="contact-heading">Ready when<br><em>you are.</em></h2>
+          <p>Tell me what you&apos;re thinking about. No pitch, no pressure — just a good conversation.</p>
+        </div>
+        <div class="contact-action">
+          <a class="contact-email" href="mailto:hello@mirabennett.example?subject=Let%27s%20talk%20real%20estate">hello@mirabennett.example <span aria-hidden="true">↗</span></a>
+          <p>Seattle, Washington<br>Serving the greater Seattle area</p>
+          <a class="button-light" href="mailto:hello@mirabennett.example?subject=Let%27s%20talk%20real%20estate">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="contact-spark" aria-hidden="true">✳</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top" aria-label="Mira Bennett Real Estate, back to top">
+        <span class="brand-mark" aria-hidden="true">MB</span>
+        <span class="brand-copy"><strong>MIRA BENNETT</strong><small>REAL ESTATE</small></span>
+      </a>
+      <p>Thoughtful moves, made together.</p>
+      <nav aria-label="Footer navigation"><a href="#homes">Homes</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+      <small class="footer-note">Demo experience — agent details and listings are illustrative. Replace contact info before launch. © 2026 Mira Bennett.</small>
+    </footer>
+
+    <dialog class="listing-dialog" id="listing-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close property details">×</button>
+      <img class="dialog-image" id="dialog-image" src="" alt="">
+      <div class="dialog-content">
+        <p class="eyebrow" id="dialog-address"></p>
+        <div class="dialog-title-row"><h2 id="dialog-title"></h2><strong id="dialog-price"></strong></div>
+        <p class="dialog-facts" id="dialog-facts"></p>
+        <p class="dialog-description" id="dialog-description"></p>
+        <a class="button-dark" href="mailto:hello@mirabennett.example?subject=I%27d%20love%20to%20see%20a%20home">Ask Mira about this home <span aria-hidden="true">↗</span></a>
+      </div>
+    </dialog>
+  </body>
+</html>
